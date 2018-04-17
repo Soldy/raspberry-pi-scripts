@@ -1,0 +1,10 @@
+#!/bin/bash
+
+array=( "$@" )
+arraylength=${#array[@]}
+for (( i=1; i<${arraylength}+1; i++ ));
+do
+   omxplayer -o hdmi -I -s --threshold 10 --audio_queue 50 --audio_fifo 50 -b "${array[$i-1]}"
+done
+
+
